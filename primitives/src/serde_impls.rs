@@ -289,6 +289,9 @@ impl From<sp_runtime::Justifications> for Justifications {
 
 impl From<Justifications> for sp_runtime::Justifications {
 	fn from(justifications: Justifications) -> Self {
+		if justifications.0.len() == 0 {
+			return Decode::decode(&mut justifications.encode().as_ref()).unwrap()
+		}
 		let first_justifaction = justifications.0[0].clone();
 		let mut sp_runtime_justifications: sp_runtime::Justifications = first_justifaction.into();
 		for justification in justifications.0 {
