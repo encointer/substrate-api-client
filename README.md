@@ -1,3 +1,13 @@
+# Integritee Patch
+
+The integritee worker still depends on the polkadot-v0.9.42 dependencies, but it needs some newer features of the
+api-client.
+This fork is based on the api-client v0.9.42 and the tag v0.14.0 with some additional patches:
+
+* Add `check-metadata-hash` SignedExtension support
+* Support `TxStatus::Retracted`
+* Support Extrinsic V5
+
 # substrate-api-client
 
 substrate-api-client is a library written in Rust for connecting to the substrate's RPC interface via WebSockets allowing to
